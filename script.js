@@ -18,44 +18,67 @@ function divide(a, b) {
 
 // Function to decide which basic operation should be called
 
-function operate(operator, num1, num2) {
+function performOperation(operator, num1, num2) {
+    num1 = parseInt(num1);
+    num2 = parseInt(num2);
     switch (operator) {
         case "+":
-            add(num1, num2);
-            break;
+            return add(num1, num2);
         case "-":
-            subtract(num1, num2);
-            break;
+            return subtract(num1, num2);
         case "*":
-            multiply(num1, num2);
-            break;
+            return multiply(num1, num2);
         case "/":
-            divide(num1, num2);
-            break;                  
+            return divide(num1, num2);              
     }
 }
 
 // Listen for number button clicks and update display accordingly
 
+let newOperation = false;
+let num = "";
+let operationArray = [];
+
 let numButtons = document.querySelectorAll(".number");
 
-numButtons.forEach(button => button.addEventListener("click", inputNum));
+numButtons.forEach(button => button.addEventListener("click", storeNum));
 
 let display = document.getElementById("display");
 
-function inputNum() {
+function storeNum() {
+    if (newOperation) clear();
+
     display.textContent += this.textContent;
+    num += this.textContent;
 }
 
 // Listen for operator clicks and store number and operator 
 
 let operators = document.querySelectorAll(".operator");
+operators.forEach(operator => operator.addEventListener("click", storeOperator));
 
-operators.forEach(operator => operator.addEventListener("click", storeNum));
+function storeOperator() {
+    if (newOperation) clear();
+    display.textContent += this.textContent;
+    operationArray.push(num);
+    num = "";
+    if (this.textContent == "=") {
+        display.textContent = performOperation(operationArray[1], operationArray[0], operationArray[2]);
+        newOperation = true;
+    }
+    else {
+        operationArray.push(this.textContent);
+    }
+}
 
-let num1 = 0;
+// Listen for clear button and clear all content
 
-function storeNum() {
-    num1 = display.textContent;
-    display.textContent = this.textContent;
+let clearButton = document.getElementById("clear");
+clearButton.addEventListener("click", clear);
+
+function clear() {
+    display.textContent = "";
+    operationArray = [];
+    num = "";
+    newOperation = false;
 }
