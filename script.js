@@ -39,11 +39,11 @@ let newOperation = false;
 let num = "";
 let operationArray = [];
 
+let display = document.getElementById("display");
+
 let numButtons = document.querySelectorAll(".number");
 
 numButtons.forEach(button => button.addEventListener("click", storeNum));
-
-let display = document.getElementById("display");
 
 function storeNum() {
     if (newOperation) clear();
@@ -58,12 +58,12 @@ let operators = document.querySelectorAll(".operator");
 operators.forEach(operator => operator.addEventListener("click", storeOperator));
 
 function storeOperator() {
-    if (newOperation) clear();
     display.textContent += this.textContent;
     operationArray.push(num);
     num = "";
     if (this.textContent == "=") {
-        display.textContent = performOperation(operationArray[1], operationArray[0], operationArray[2]);
+        let solution = performOperation(operationArray[1], operationArray[0], operationArray[2]);
+        display.textContent = solution;
         newOperation = true;
     }
     else {
