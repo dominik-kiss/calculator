@@ -18,7 +18,7 @@ function divide(a, b) {
 
 // Function to decide which basic operation should be called
 
-function performOperation(operator, num1, num2) {
+function performOperation(num1, operator, num2) {
     num1 = parseInt(num1);
     num2 = parseInt(num2);
     switch (operator) {
@@ -35,7 +35,6 @@ function performOperation(operator, num1, num2) {
 
 // Listen for number button clicks and update display accordingly
 
-let newOperation = false;
 let num = "";
 let operationArray = [];
 
@@ -46,8 +45,6 @@ let numButtons = document.querySelectorAll(".number");
 numButtons.forEach(button => button.addEventListener("click", storeNum));
 
 function storeNum() {
-    if (newOperation) clear();
-
     display.textContent += this.textContent;
     num += this.textContent;
 }
@@ -59,16 +56,29 @@ operators.forEach(operator => operator.addEventListener("click", storeOperator))
 
 function storeOperator() {
     display.textContent += this.textContent;
-    operationArray.push(num);
+    if(operationArray.length != 1) {
+        operationArray.push(num); // Store number entered before, then clear variable for later use
+        num = "";
+    }
+    operationArray.push(this.textContent); // Store operator that was pressed
+}
+
+// Listen for equal sign, store number, and operate
+
+let equal = document.getElementById("equal");
+equal.addEventListener("click", operate);
+
+function operate() {
+    operationArray.push(num); // Store number entered before, then clear variable for later use
     num = "";
-    if (this.textContent == "=") {
-        let solution = performOperation(operationArray[1], operationArray[0], operationArray[2]);
-        display.textContent = solution;
-        newOperation = true;
+
+    while (operationArray.length >= 3) {
+        let solution = performOperation(operationArray[0], operationArray[1], operationArray[2]);
+        operationArray.splice(0, 3);
+        operationArray.splice(0, 0, solution);
     }
-    else {
-        operationArray.push(this.textContent);
-    }
+
+    display.textContent = operationArray[0];
 }
 
 // Listen for clear button and clear all content
@@ -80,5 +90,4 @@ function clear() {
     display.textContent = "";
     operationArray = [];
     num = "";
-    newOperation = false;
 }
