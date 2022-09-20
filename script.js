@@ -102,3 +102,15 @@ function clear() {
     operationArray = [];
     num = "";
 }
+
+//
+
+let decimal = document.getElementById("decimal");
+decimal.addEventListener("click", storeDecimal);
+
+function storeDecimal() {
+    if (operationArray.length != 1 && !num.includes(".")) {
+        num += this.textContent;
+        display.textContent += this.textContent;
+    }
+}
