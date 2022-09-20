@@ -45,8 +45,15 @@ let numButtons = document.querySelectorAll(".number");
 numButtons.forEach(button => button.addEventListener("click", storeNum));
 
 function storeNum() {
-    display.textContent += this.textContent;
-    num += this.textContent;
+    if (operationArray.length == 1) {
+        operationArray = [];
+        num += this.textContent;
+        display.textContent = this.textContent;
+    }
+    else {
+        display.textContent += this.textContent;
+        num += this.textContent;
+    }
 }
 
 // Listen for operator clicks and store number and operator 
