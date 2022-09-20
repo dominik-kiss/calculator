@@ -19,17 +19,17 @@ function divide(a, b) {
 // Function to decide which basic operation should be called
 
 function performOperation(num1, operator, num2) {
-    num1 = parseInt(num1);
-    num2 = parseInt(num2);
+    num1 = parseFloat(num1);
+    num2 = parseFloat(num2);
     switch (operator) {
         case "+":
-            return add(num1, num2);
+            return +add(num1, num2).toFixed(2);
         case "-":
-            return subtract(num1, num2);
+            return +subtract(num1, num2).toFixed(2);
         case "*":
-            return multiply(num1, num2);
+            return +multiply(num1, num2).toFixed(2);
         case "/":
-            return divide(num1, num2);              
+            return +divide(num1, num2).toFixed(2);
     }
 }
 
