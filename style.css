@@ -5,13 +5,14 @@ body {
 }
 
 button {
-    width: 75px;
-    height: 40px;
+    width: 100px;
+    height: 60px;
+    font-size: 20px;
 }
 
 #display {
-    width: 300px;
-    height: 100px;
+    width: 500px;
+    height: 200px;
     border: 1px solid black;
     font-size: 50px;
     text-align: right;
@@ -19,9 +20,10 @@ button {
 
 #buttons {
     display: flex;
-    width: 300px;
+    width: 500px;
     flex-wrap: wrap;
-    justify-content: right;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 #equals {
