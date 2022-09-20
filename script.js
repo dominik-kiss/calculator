@@ -81,6 +81,10 @@ function operate() {
 
     while (operationArray.length >= 3) {
         let solution = performOperation(operationArray[0], operationArray[1], operationArray[2]);
+        if (solution == "Infinity") {
+            display.textContent = "Diving by 0 huh?";
+            return;
+        }
         operationArray.splice(0, 3);
         operationArray.splice(0, 0, solution);
     }
