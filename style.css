@@ -2,6 +2,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #d9d3cc;
 }
 
 button {
@@ -13,7 +14,9 @@ button {
 #container {
     display: flex;
     flex-direction: column;
-    width: 500px;
+    width: 600px;
+    height: 400px;
+    background-color: #92939c;
 }
 
 #display {
@@ -25,14 +28,41 @@ button {
     overflow-wrap: break-word;
 }
 
-#buttons {
+.container {
     display: flex;
-    height: 400px;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: space-between;
-    margin-top: 20px;
 }
+
+#left,
+#top-left {
+    flex-direction: column;
+}
+
+#top-right {
+    flex-wrap: wrap;
+    width: 300px;
+}
+
+#right {
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 240px;
+}
+
+#plus {
+    height: 180px;
+}
+
+#bottom {
+    justify-content: right;
+}
+
+#zero {
+    width: 400px;
+}
+
+
+
+
 
 #equal {
     width: 100%;
