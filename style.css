@@ -6,17 +6,26 @@ body {
 }
 
 button {
-    width: 100px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     font-size: 20px;
+    background-color: #d7d0c0;
+    border: outset;
+    box-shadow: 5px;
 }
 
 #container {
     display: flex;
     flex-direction: column;
-    width: 600px;
-    height: 400px;
+    width: 530px;
+    height: 460px;
     background-color: #92939c;
+}
+
+#button-plate {
+    gap: 30px;
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
 #display {
@@ -32,38 +41,55 @@ button {
     display: flex;
 }
 
+#top {
+    gap: 20px;
+}
+
 #left,
-#top-left {
+#top-left,
+#right {
     flex-direction: column;
+}
+
+#left {
+    gap: 20px;
+}
+
+#top-left {
+    gap: 5px;
 }
 
 #top-right {
     flex-wrap: wrap;
-    width: 300px;
+    width: 220px;
+    gap: 5px;
 }
 
 #right {
     flex-wrap: wrap;
-    flex-direction: column;
-    height: 240px;
+    height: 300px;
+    gap: 5px;
+    justify-content: center;
 }
 
 #plus {
-    height: 180px;
+    height: 220px;
 }
 
 #bottom {
     justify-content: right;
 }
 
-#zero {
-    width: 400px;
+.rectangle {
+    border-radius: 5%;
 }
 
+.number {
+    border-radius: 50%;
+}
 
-
-
-
-#equal {
-    width: 100%;
+#zero {
+    border-radius: 60px;
+    width: 310px;
+    height: 60px;
 }
