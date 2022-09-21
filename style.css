@@ -218,9 +218,8 @@ button:active::before {
 .fa-github {
     color: black;
     transition: transform 0.3s ease-in-out;
-  }
-  
+}
+
 .fa-github:hover {
     transform: rotate(360deg) scale(1.2);
 }
-  

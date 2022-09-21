@@ -114,3 +114,19 @@ function storeDecimal() {
         display.textContent += this.textContent;
     }
 }
+
+// Listen for backspace button and clear last character
+
+let backspace = document.getElementById("backspace");
+backspace.addEventListener("click", goBack);
+
+//Clear the last letter/character from the display
+//If the 'num' variable has a value, also clear the last digit from that
+function goBack() {
+    console.log("Running");
+    display.textContent = display.textContent.substring(0,display.textContent.length - 1);
+
+    if(num != "") {
+        num = num.substring(0, num.length - 1);
+    }
+}
