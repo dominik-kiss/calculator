@@ -5,10 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <script
+      src="https://kit.fontawesome.com/4c536a6bd5.js"
+      crossorigin="anonymous">
+    </script>
     <script src="script.js" defer></script>
     <title>Calculator</title>
 </head>
 <body>
+    <div id="header">
+        <div id="logo">Retro calculator</div>
+    </div>
     <div id="container">
         <div id="display"></div>
         <div id="button-plate" class="container">
@@ -44,6 +52,18 @@
                 <button id="plus" class="operator rectangle">+</button>
             </div>
         </div>
+    </div>
+    <div id="footer">
+        <div>
+            Copyright © 
+            <script>
+                document.write(new Date().getFullYear())
+            </script> 
+            dominik-kiss
+        </div>
+        <a href="https://github.com/dominik-kiss" target="_blank">
+            <i class="fab fa-github"></i>
+        </a>
     </div>
 </body>
 </html>
