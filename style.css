@@ -22,6 +22,8 @@ body {
     background-color: #d9d3cc;
 }
 
+/*** General button setup ***/
+
 button {
     width: 70px;
     height: 70px;
@@ -38,92 +40,6 @@ button {
     font-weight: 700;
     text-transform: uppercase;
     font-family: inherit;
-}
-
-#container {
-    display: flex;
-    flex-direction: column;
-    width: 530px;
-    height: 460px;
-    background-color: #92939c;
-}
-
-#button-plate {
-    gap: 30px;
-    margin-top: 20px;
-    margin-left: 20px;
-}
-
-#display {
-    height: 100px;
-    border: 1px solid black;
-    font-size: 45px;
-    text-align: right;
-    white-space: pre-line;
-    overflow-wrap: break-word;
-}
-
-.container {
-    display: flex;
-}
-
-#top {
-    gap: 20px;
-}
-
-#left,
-#top-left,
-#right {
-    flex-direction: column;
-}
-
-#left {
-    gap: 20px;
-}
-
-#top-left,
-#right {
-    gap: 5px;
-}
-
-#top-left {
-    padding: 3px;
-}
-
-#top-right {
-    flex-wrap: wrap;
-    width: 220px;
-}
-
-#right {
-    flex-wrap: wrap;
-    height: 300px;
-    width: 150px;
-    justify-content: center;
-    padding-left: 3px;
-}
-
-#plus {
-    height: 220px;
-}
-
-#bottom {
-    justify-content: right;
-}
-
-.number {
-    border-radius: 50%;
-}
-
-#zero {
-    border-radius: 60px;
-    width: 310px;
-    height: 60px;
-}
-
-
- 
-button {
     border-radius: 0.7em;
     background: var(--colorShadeE);
     transform-style: preserve-3d;
@@ -162,3 +78,93 @@ button:active::before {
     transform: translate3d(0, 0, -1em);
     box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.25em 0 0 var(--colorShadeB);
 }
+
+/*** Containers from outside inwards  ***/
+
+.container {
+    display: flex;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    width: 530px;
+    height: 460px;
+    background-color: #92939c;
+}
+
+#display {
+    height: 100px;
+    border: 1px solid black;
+    font-size: 45px;
+    text-align: right;
+    white-space: pre-line;
+    overflow-wrap: break-word;
+}
+
+#button-plate {
+    gap: 30px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+/** Inner button containers  **/
+
+#top {
+    gap: 20px;
+}
+
+#left,
+#top-left,
+#right {
+    flex-direction: column;
+}
+
+#left {
+    gap: 20px;
+}
+
+#top-left,
+#right {
+    gap: 5px;
+}
+
+#top-left {
+    padding: 3px;
+}
+
+#top-right {
+    flex-wrap: wrap;
+    width: 220px;
+}
+
+#right {
+    flex-wrap: wrap;
+    height: 300px;
+    width: 150px;
+    justify-content: center;
+    padding-left: 3px;
+}
+
+/*** Specific buttons  ***/
+
+.number {
+    border-radius: 50%;
+}
+
+#plus {
+    height: 220px;
+}
+
+#bottom {
+    justify-content: right;
+}
+
+#zero {
+    border-radius: 60px;
+    width: 310px;
+    height: 60px;
+}
+
+
+ 
