@@ -22,6 +22,17 @@ body {
     align-items: center;
     margin: 0;
     background-color: #FF9F29;
+    font-family: 'roboto';
+}
+
+@font-face {
+    font-family: 'calculator';
+    src: url('font/digital-7.ttf');
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('font/Roboto-Black.ttf');
 }
 
 /*** Header ***/
@@ -121,6 +132,7 @@ button:active::before {
     width: 300px;
     border: 1px solid black;
     border-radius: 20px;
+    font-family: 'calculator';
     font-size: 45px;
     text-align: right;
     white-space: nowrap;
