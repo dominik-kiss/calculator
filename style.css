@@ -19,7 +19,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #d9d3cc;
 }
 
 /*** General button setup ***/
@@ -88,24 +87,33 @@ button:active::before {
 #container {
     display: flex;
     flex-direction: column;
-    width: 530px;
+    width: 550px;
     height: 460px;
-    background-color: #92939c;
+    background-color: #d9d3cc;
+    align-items: center;
+    border-radius: 3em;
 }
 
 #display {
     height: 100px;
+    width: 300px;
     border: 1px solid black;
+    border-radius: 20px;
     font-size: 45px;
     text-align: right;
-    white-space: pre-line;
-    overflow-wrap: break-word;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-top: 10px;
+    background-color: #81756f;
 }
 
 #button-plate {
     gap: 30px;
-    margin-top: 20px;
-    margin-left: 20px;
+    margin: 20px;
+    border-radius: 20px;
+    background-color: #92939c;
+    padding: 10px 10px 30px 10px;
 }
 
 /** Inner button containers  **/
@@ -136,6 +144,7 @@ button:active::before {
 #top-right {
     flex-wrap: wrap;
     width: 220px;
+    gap: 5px;
 }
 
 #right {
@@ -166,5 +175,11 @@ button:active::before {
     height: 60px;
 }
 
+#backspace,
+#clear,
+#equal {
+    background-color: #c26651;
+    color: antiquewhite;
+}
 
  
