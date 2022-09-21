@@ -120,13 +120,39 @@ function storeDecimal() {
 let backspace = document.getElementById("backspace");
 backspace.addEventListener("click", goBack);
 
-//Clear the last letter/character from the display
-//If the 'num' variable has a value, also clear the last digit from that
+// Clear the last letter/character from the display
+// If the 'num' variable has a value, also clear the last digit from that
 function goBack() {
-    console.log("Running");
     display.textContent = display.textContent.substring(0,display.textContent.length - 1);
 
     if(num != "") {
         num = num.substring(0, num.length - 1);
+    }
+}
+
+// Listen for keyboard input (numbers specifically)
+
+document.addEventListener("keydown", keyPressed);
+let clickEvent = new Event("click");
+let allButtons = document.querySelectorAll("button");
+
+function keyPressed(e) {
+    allButtons.forEach((button) => {
+        if (button.textContent == e.key) {
+            button.dispatchEvent(clickEvent);
+            return;
+        }
+    });
+    switch (e.key) {
+        case "Backspace":
+            document.getElementById("backspace").dispatchEvent(clickEvent);
+            return;
+        case "c":
+        case "Delete":
+            document.getElementById("clear").dispatchEvent(clickEvent);
+            return;
+        case "Enter":
+            document.getElementById("equal").dispatchEvent(clickEvent);
+            return;
     }
 }
