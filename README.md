@@ -1,6 +1,6 @@
 # Calculator
 
-I created this basic Calculator for the Odin Project. The goal of the project was to build a functional calculator and style it.
+I created this basic Calculator while following The Odin Project's curriculum. The goal of the project was to build a functional calculator and style it.
 
 It was a requirement to only evaluate a single operation (pair of numbers and operator) at a time. For this reason, this calculator doesn't respect the mathematical order of operations.
 
