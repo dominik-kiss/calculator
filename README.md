@@ -11,4 +11,5 @@ It was a requirement to only evaluate a single operation (pair of numbers and op
 Fonts used:
 
 [digital-7](https://www.fontspace.com/digital-7-font-f7087) by Style-7
+
 [roboto](https://www.1001fonts.com/roboto-font.html) by Christian Robertson
